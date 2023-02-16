@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import FormArticle from "./components/FormArticle";
+import Counter from "./components/Counter";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [content, setContent] = useState("Hello There");
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>Word Counter</h1>
+            </header>
+
+            <FormArticle content={content} setContent={setContent}/>
+            <Counter content={content}/>
+        </div>
+    );
 }
 
 export default App;
